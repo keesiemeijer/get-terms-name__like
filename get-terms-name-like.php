@@ -23,8 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 add_filter( 'terms_clauses', 'gtnl_get_terms_name__like', 10, 3 );
 
 function gtnl_get_terms_name__like( $pieces, $taxonomies, $args ) {
+	global $wp_version;
 
 	if ( !is_admin() ) {
+
+		// return for versions lower than 3.7
+		if ( version_compare( $wp_version, "3.7", "<" ) )
+			return $pieces;
 
 		if ( isset( $args['name__like'] ) && $args['name__like'] ) {
 			$pattern = "/AND t\.name LIKE '%(.*?)%'/";

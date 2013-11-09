@@ -18,7 +18,7 @@ http://core.trac.wordpress.org/ticket/8214
 The "search" parameter does almost exactly what the "name__like" parameter does now (in 3.7), the difference being it also searches in term slugs. Use both parameters (as it was before 3.7) to get the terms you want.
 See: http://codex.wordpress.org/Function_Reference/get_terms#Parameters
 
-**Note**: this plugin only reverses it on the front end of your website.
+**Note**: this plugin only reverses it on the front end of your website for WordPress versions 3.7 and up.
 
 == Installation ==
 * Unzip the get-terms-name-like.zip folder.
